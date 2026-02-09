@@ -103,7 +103,7 @@ body {
 .final {
     text-align: center;
     padding: 40px 20px;
-    font-size: 18px;
+    font-size: 25px;
     opacity: 0.8;
 }
 .portada-overlay {
@@ -144,3 +144,4 @@ body {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
 }
+
