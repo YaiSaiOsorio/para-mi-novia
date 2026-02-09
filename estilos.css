@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: #e778a9;
+    color: #333;
+}
+
+/* PORTADA */
+.portada {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.portada h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.portada p {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+/* ÁLBUM */
+.album {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding: 40px;
+}
+
+.foto {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.foto img {
+    width: 100%;
+    max-width: 220px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    background: white;
+    padding: 10px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+    border-radius: 4px;
+    transition: all 0.4s ease;
+}
+
+
+
+.foto:nth-child(even) img {
+    transform: rotate(4deg);
+}
+
+.foto:hover img {
+    transform: scale(1.05) rotate(0deg);
+}
+
+/* VISOR */
+.visor {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.visor.activo {
+    display: flex;
+}
+
+.contenido {
+    background: white;
+    padding: 20px;
+    max-width: 90%;
+    animation: aparecer 0.4s ease;
+}
+
+.contenido img {
+    max-width: 90vw;
+    max-height: 70vh;
+    object-fit: contain;
+}
+
+.contenido p {
+    font-size: 18px;
+    text-align: center;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.final {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 18px;
+    opacity: 0.8;
+}
+.portada-overlay {
+    position: fixed;
+    inset: 0;
+    background: #8c8af1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+        user-select: none;
+        cursor: pointer;
+}
+
+.portada-contenido {
+    text-align: center;
+    animation: latido 2s infinite;
+}
+
+.portada-contenido h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.portada-contenido p {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+.portada-contenido span {
+    display: block;
+    margin-top: 20px;
+    font-size: 16px;
+    opacity: 0.7;
+}
+
+@keyframes latido {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
